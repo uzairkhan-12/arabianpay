@@ -58,17 +58,17 @@ export default function Header() {
         </div>
 
         <Select
-          options={languageOptions}
-          onChange={handleLanguageChange}
-          getOptionLabel={(e) => (
-            <div className="flex items-center">
-              <Flag code={e.flag} className="h-6 w-6" />
-            </div>
-          )}
-          className="w-22"
-          isSearchable={false}
-          defaultValue={defaultLanguage}
-        />
+  options={languageOptions}
+  formatOptionLabel={(e) => (
+    <div className="flex items-center">
+      <Flag code={e.flag} className="h-6 w-6" />
+      <span className="ml-2">{e.value}</span> {/* Optional: Display the value */}
+    </div>
+  )}
+  className="w-22"
+  isSearchable={false}
+  defaultValue={defaultLanguage}
+/>
         <div className="flex items-center gap-2 md:hidden">
           <button onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <X size={28} /> : <Menu size={28} />}
