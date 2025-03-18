@@ -17,10 +17,10 @@ export default function HowItWorksSection() {
 
   // Trigger animations when steps come into view
   useEffect(() => {
-    if (inView1) controls1.start({ opacity: 1, x: 0 });
-    if (inView2) controls2.start({ opacity: 1, x: 0 });
-    if (inView3) controls3.start({ opacity: 1, x: 0 });
-    if (inView4) controls4.start({ opacity: 1, x: 0 });
+    if (inView1) controls1.start({ opacity: 1, scale: 1 });
+    if (inView2) controls2.start({ opacity: 1, scale: 1 });
+    if (inView3) controls3.start({ opacity: 1, scale: 1 });
+    if (inView4) controls4.start({ opacity: 1, scale: 1 });
   }, [controls1, controls2, controls3, controls4, inView1, inView2, inView3, inView4]);
 
   return (
@@ -30,7 +30,7 @@ export default function HowItWorksSection() {
         {/* Step 1 */}
         <motion.div
           ref={ref1}
-          initial={{ opacity: 0, x: -100 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={controls1}
           transition={{ duration: 0.6 }}
           className="flex gap-x-10 flex-col md:flex-row items-center justify-between mb-12"
@@ -53,7 +53,7 @@ export default function HowItWorksSection() {
         {/* Step 2 */}
         <motion.div
           ref={ref2}
-          initial={{ opacity: 0, x: 100 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={controls2}
           transition={{ duration: 0.6 }}
           className="flex gap-x-10 flex-col md:flex-row items-center justify-between mb-12"
@@ -76,7 +76,7 @@ export default function HowItWorksSection() {
         {/* Step 3 */}
         <motion.div
           ref={ref3}
-          initial={{ opacity: 0, x: -100 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={controls3}
           transition={{ duration: 0.6 }}
           className="flex gap-x-10 flex-col md:flex-row items-center justify-between mb-12"
@@ -99,7 +99,7 @@ export default function HowItWorksSection() {
         {/* Step 4 */}
         <motion.div
           ref={ref4}
-          initial={{ opacity: 0, x: 100 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={controls4}
           transition={{ duration: 0.6 }}
           className="flex gap-x-10 flex-col md:flex-row items-center justify-between"
