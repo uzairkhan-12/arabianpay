@@ -1,10 +1,40 @@
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+
 export default function HowItWorksSection() {
+  // Animation controls for each step
+  const controls1 = useAnimation();
+  const controls2 = useAnimation();
+  const controls3 = useAnimation();
+  const controls4 = useAnimation();
+
+  // Track when each step is in view
+  const [ref1, inView1] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [ref2, inView2] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [ref3, inView3] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [ref4, inView4] = useInView({ triggerOnce: true, threshold: 0.2 });
+
+  // Trigger animations when steps come into view
+  useEffect(() => {
+    if (inView1) controls1.start({ opacity: 1, x: 0 });
+    if (inView2) controls2.start({ opacity: 1, x: 0 });
+    if (inView3) controls3.start({ opacity: 1, x: 0 });
+    if (inView4) controls4.start({ opacity: 1, x: 0 });
+  }, [controls1, controls2, controls3, controls4, inView1, inView2, inView3, inView4]);
+
   return (
     <section className="py-20 px-6 bg-gray-50 text-center">
       <h2 className="text-3xl font-bold mb-8">How It Works</h2>
       <div className="max-w-4xl mx-auto">
         {/* Step 1 */}
-        <div className="flex flex-col md:flex-row items-center justify-between mb-12">
+        <motion.div
+          ref={ref1}
+          initial={{ opacity: 0, x: -100 }}
+          animate={controls1}
+          transition={{ duration: 0.6 }}
+          className="flex gap-x-10 flex-col md:flex-row items-center justify-between mb-12"
+        >
           <div className="md:w-1/2 md:pr-8 text-left">
             <h3 className="text-2xl font-semibold mb-4">1. Download the App</h3>
             <p className="text-gray-600">
@@ -15,13 +45,19 @@ export default function HowItWorksSection() {
             <img
               src="/download1.jpg"
               alt="Download the App"
-              className="w-full h-64 object-cover rounded-lg shadow-md"
+              className="w-full max-w-[256px] md:max-w-full h-64 object-cover rounded-lg shadow-md"
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* Step 2 */}
-        <div className="flex flex-col md:flex-row items-center justify-between mb-12">
+        <motion.div
+          ref={ref2}
+          initial={{ opacity: 0, x: 100 }}
+          animate={controls2}
+          transition={{ duration: 0.6 }}
+          className="flex gap-x-10 flex-col md:flex-row items-center justify-between mb-12"
+        >
           <div className="md:w-1/2 md:order-last md:pl-8 text-left">
             <h3 className="text-2xl font-semibold mb-4">2. Sign Up</h3>
             <p className="text-gray-600">
@@ -35,12 +71,18 @@ export default function HowItWorksSection() {
               className="w-full h-64 object-cover rounded-lg shadow-md"
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* Step 3 */}
-        <div className="flex flex-col md:flex-row items-center justify-between mb-12">
+        <motion.div
+          ref={ref3}
+          initial={{ opacity: 0, x: -100 }}
+          animate={controls3}
+          transition={{ duration: 0.6 }}
+          className="flex gap-x-10 flex-col md:flex-row items-center justify-between mb-12"
+        >
           <div className="md:w-1/2 md:pr-8 text-left">
-            <h3 className="text-2xl font-semibold mb-4">3. Shop & Pay Later</h3>
+            <h3 className="text-2xl font-semibold mb-4">3. Shop Now & Pay Later</h3>
             <p className="text-gray-600">
               Browse our marketplace, make purchases, and split your payments into 3 easy installments.
             </p>
@@ -52,10 +94,16 @@ export default function HowItWorksSection() {
               className="w-full h-64 object-cover rounded-lg shadow-md"
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* Step 4 */}
-        <div className="flex flex-col md:flex-row items-center justify-between">
+        <motion.div
+          ref={ref4}
+          initial={{ opacity: 0, x: 100 }}
+          animate={controls4}
+          transition={{ duration: 0.6 }}
+          className="flex gap-x-10 flex-col md:flex-row items-center justify-between"
+        >
           <div className="md:w-1/2 md:order-last md:pl-8 text-left">
             <h3 className="text-2xl font-semibold mb-4">4. Grow Your Business</h3>
             <p className="text-gray-600">
@@ -64,12 +112,12 @@ export default function HowItWorksSection() {
           </div>
           <div className="md:w-1/2 mt-6 md:mt-0">
             <img
-              src="/about.jpg"
+              src="/growbusiness.jpg"
               alt="Grow Your Business"
               className="w-full h-64 object-cover rounded-lg shadow-md"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

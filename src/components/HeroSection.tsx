@@ -24,7 +24,7 @@ export default function HeroSection({ videoSrc }: { videoSrc: string }) {
   return (
     <section className="h-screen flex flex-col justify-center items-center text-center p-6 relative overflow-hidden">
       {/* Video Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute top-16 inset-0 z-0">
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <video
           ref={videoRef}

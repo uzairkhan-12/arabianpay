@@ -6,12 +6,17 @@ import MarketplaceSection from "@/components/MarketplaceSection";
 import DownloadSection from "@/components/DownloadSection";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+// Define the type for the props
+interface HomeProps {
+  videoSrc: string;
+}
+
+export default function Home({ videoSrc }: HomeProps) {
   return (
     <div>
       <Header />
       <div className="min-h-screen bg-gray-100 text-gray-900">
-        <HeroSection videoSrc="/arabianpay.mp4" />
+        <HeroSection videoSrc={videoSrc} />
         <FeaturesSection />
         <HowItWorksSection />
         <MarketplaceSection />
@@ -20,4 +25,13 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+// Fetch static data at build time
+export async function getStaticProps() {
+  return {
+    props: {
+      videoSrc: "/arabianpay.mp4", // Preload the video source
+    },
+  };
 }
