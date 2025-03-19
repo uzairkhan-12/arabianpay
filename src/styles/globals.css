@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  --primary: #2F3193;
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -8,6 +9,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -17,18 +19,4 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
-
-/* Custom styles for Swiper */
-.swiper-button-next,
-.swiper-button-prev {
-  color: #4a5568; /* Change the color of the navigation buttons */
-}
-
-.swiper-pagination-bullet {
-  background-color: #4a5568; /* Change the color of the pagination bullets */
-}
-
-.swiper-pagination-bullet-active {
-  background-color: #2d3748; /* Change the color of the active pagination bullet */
 }

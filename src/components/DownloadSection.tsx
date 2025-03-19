@@ -1,6 +1,6 @@
 export default function DownloadSection() {
     return (
-      <section className="py-20 px-6 bg-blue-500 text-white text-center">
+      <section className="py-20 px-6 bg-primary text-white text-center">
         <h2 className="text-3xl font-bold mb-4">Download Arabian Pay Today</h2>
         <p className="max-w-3xl mx-auto text-lg mb-6">
           Join thousands of businesses using Arabian Pay for seamless payments and financial flexibility.

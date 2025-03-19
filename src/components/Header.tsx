@@ -26,21 +26,21 @@ export default function Header() {
       {/* Header */}
       <header className="fixed top-0 left-0 w-full bg-white shadow-md py-4 px-6 flex justify-between items-center z-50">
         <div className="flex items-center gap-6">
-          <div className="text-2xl font-bold text-blue-600">ArabianPay</div>
+          <div className="text-2xl font-bold text-primary">ArabianPay</div>
         </div>
 
         {/* Navigation Links (Hidden on mobile) */}
         <nav className="hidden md:flex gap-6">
-          <a href="#about" className="text-gray-700 hover:text-blue-500">
+          <a href="#about" className="text-gray-700 hover:text-primary">
             About
           </a>
-          <a href="#features" className="text-gray-700 hover:text-blue-500">
+          <a href="#features" className="text-gray-700 hover:text-primary">
             Features
           </a>
-          <a href="#how-it-works" className="text-gray-700 hover:text-blue-500">
+          <a href="#how-it-works" className="text-gray-700 hover:text-primary">
             How It Works
           </a>
-          <a href="#contact" className="text-gray-700 hover:text-blue-500">
+          <a href="#contact" className="text-gray-700 hover:text-primary">
             Contact
           </a>
         </nav>
@@ -49,10 +49,10 @@ export default function Header() {
         
         <div className="flex gap-x-2 items-center">
         <div className="hidden md:flex flex-col items-center text-sm text-gray-500">
-          <a href="tel:+920031271" className="hover:text-blue-500">
+          <a href="tel:+920031271" className="hover:text-primary">
             Unified No.: 920031271
           </a>
-          <a href="tel:+8001111063" className="hover:text-blue-500">
+          <a href="tel:+8001111063" className="hover:text-primary">
             Free Number: 8001111063
           </a>
         </div>
@@ -78,25 +78,25 @@ export default function Header() {
 
         {menuOpen && (
           <div className="absolute top-16 left-0 w-full bg-white shadow-md py-4 flex flex-col gap-4 items-center md:hidden transition-all duration-500 opacity-100">
-            <a href="#about" className="text-gray-700 hover:text-blue-500" onClick={() => setMenuOpen(false)}>
+            <a href="#about" className="text-gray-700 hover:text-primary" onClick={() => setMenuOpen(false)}>
               About
             </a>
-            <a href="#features" className="text-gray-700 hover:text-blue-500" onClick={() => setMenuOpen(false)}>
+            <a href="#features" className="text-gray-700 hover:text-primary" onClick={() => setMenuOpen(false)}>
               Features
             </a>
-            <a href="#how-it-works" className="text-gray-700 hover:text-blue-500" onClick={() => setMenuOpen(false)}>
+            <a href="#how-it-works" className="text-gray-700 hover:text-primary" onClick={() => setMenuOpen(false)}>
               How It Works
             </a>
-            <a href="#contact" className="text-gray-700 hover:text-blue-500" onClick={() => setMenuOpen(false)}>
+            <a href="#contact" className="text-gray-700 hover:text-primary" onClick={() => setMenuOpen(false)}>
               Contact
             </a>
 
             {/* Phone Numbers (Only Show in Mobile Menu) */}
             <div className="flex flex-col items-center text-sm text-gray-500">
-              <a href="tel:+920031271" className="hover:text-blue-500">
+              <a href="tel:+920031271" className="hover:text-primary">
                 Unified No.: 920031271
               </a>
-              <a href="tel:+8001111063" className="hover:text-blue-500">
+              <a href="tel:+8001111063" className="hover:text-primary">
                 Free Number: 8001111063
               </a>
             </div>

@@ -53,7 +53,7 @@ export default function HeroSection({ videoSrc }: { videoSrc: string }) {
       <div className="relative z-10">
         <div className="flex flex-col gap-y-2 items-center justify-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Empower Your Business with <span className="text-blue-400">Arabian Pay</span>
+            Empower Your Business with <span className="text-primary">ArabianPay</span>
           </h1>
           <p className="text-lg md:text-xl max-w-2xl text-white mb-6">
             Buy Now, Pay Later – Simplified for Your Business. Get up to <span className="font-semibold">20,000 SAR</span> in flexible installments.
@@ -62,10 +62,10 @@ export default function HeroSection({ videoSrc }: { videoSrc: string }) {
 
         {/* Call-to-Action Buttons */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-          <button className="px-6 py-3 bg-white text-blue-500 font-semibold rounded-full shadow-lg hover:bg-gray-200 transition-all">
+          <button className="px-6 py-3 bg-white text-primary font-semibold rounded-full shadow-lg hover:bg-gray-200 transition-all">
             Get Started
           </button>
-          <button className="px-6 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-full shadow-lg hover:bg-white hover:text-blue-500 transition-all">
+          <button className="px-6 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-full shadow-lg hover:bg-white hover:text-primary transition-all">
             Learn More
           </button>
         </div>

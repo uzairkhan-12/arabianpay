@@ -6,7 +6,6 @@ import MarketplaceSection from "@/components/MarketplaceSection";
 import DownloadSection from "@/components/DownloadSection";
 import Footer from "@/components/Footer";
 
-// Define the type for the props
 interface HomeProps {
   videoSrc: string;
 }
@@ -27,11 +26,10 @@ export default function Home({ videoSrc }: HomeProps) {
   );
 }
 
-// Fetch static data at build time
 export async function getStaticProps() {
   return {
     props: {
-      videoSrc: "/arabianpay.mp4", // Preload the video source
+      videoSrc: "/arabianpay.mp4",
     },
   };
 }
