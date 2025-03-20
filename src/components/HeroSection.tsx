@@ -1,9 +1,16 @@
 import { useRef, useEffect } from "react";
-import { FaTiktok, FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import {
+  FaTiktok,
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaYoutube,
+} from "react-icons/fa";
 import SocialIcon from "./SocialIcon";
+import Button from "./Button";
+import { HeroSectionPropsI } from "../../shared.interface";
 
-
-export default function HeroSection({ videoSrc }: { videoSrc: string }) {
+export default function HeroSection({ videoSrc }: HeroSectionPropsI) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -23,7 +30,6 @@ export default function HeroSection({ videoSrc }: { videoSrc: string }) {
 
   return (
     <section className="h-screen flex flex-col justify-center items-center text-center p-6 relative overflow-hidden">
-      {/* Video Background */}
       <div className="absolute top-16 inset-0 z-0">
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <video
@@ -40,34 +46,44 @@ export default function HeroSection({ videoSrc }: { videoSrc: string }) {
         </video>
       </div>
 
-      {/* Social Media Icons */}
       <div className="absolute bottom-10 md:top-20 md:right-3 z-10 flex flex-row md:flex-col space-x-4 md:space-y-4">
         <SocialIcon href="https://tiktok.com" icon={<FaTiktok size={24} />} />
-        <SocialIcon href="https://facebook.com" icon={<FaFacebook size={24} />} />
-        <SocialIcon href="https://instagram.com" icon={<FaInstagram size={24} />} />
-        <SocialIcon href="https://linkedin.com" icon={<FaLinkedin size={24} />} />
+        <SocialIcon
+          href="https://facebook.com"
+          icon={<FaFacebook size={24} />}
+        />
+        <SocialIcon
+          href="https://instagram.com"
+          icon={<FaInstagram size={24} />}
+        />
+        <SocialIcon
+          href="https://linkedin.com"
+          icon={<FaLinkedin size={24} />}
+        />
         <SocialIcon href="https://youtube.com" icon={<FaYoutube size={24} />} />
       </div>
 
-      {/* Content */}
       <div className="relative z-10">
         <div className="flex flex-col gap-y-2 items-center justify-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Empower Your Business with <span className="text-primary">ArabianPay</span>
+            Empower Your Business with{" "}
+            <span className="text-primary">ArabianPay</span>
           </h1>
           <p className="text-lg md:text-xl max-w-2xl text-white mb-6">
-            Buy Now, Pay Later – Simplified for Your Business. Get up to <span className="font-semibold">20,000 SAR</span> in flexible installments.
+            Buy Now, Pay Later – Simplified for Your Business. Get up to{" "}
+            <span className="font-semibold">20,000 SAR</span> in flexible
+            installments.
           </p>
         </div>
 
-        {/* Call-to-Action Buttons */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-          <button className="px-6 py-3 bg-white text-primary font-semibold rounded-full shadow-lg hover:bg-gray-200 transition-all">
-            Get Started
-          </button>
-          <button className="px-6 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-full shadow-lg hover:bg-white hover:text-primary transition-all">
-            Learn More
-          </button>
+        <Button variant="primary" >
+        Get Started
+      </Button>
+      <Button variant="outline" >
+        Learn More
+      </Button>
+
         </div>
       </div>
     </section>

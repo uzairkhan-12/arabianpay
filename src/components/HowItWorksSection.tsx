@@ -3,19 +3,16 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
 export default function HowItWorksSection() {
-  // Animation controls for each step
   const controls1 = useAnimation();
   const controls2 = useAnimation();
   const controls3 = useAnimation();
   const controls4 = useAnimation();
 
-  // Track when each step is in view
   const [ref1, inView1] = useInView({ triggerOnce: true, threshold: 0.2 });
   const [ref2, inView2] = useInView({ triggerOnce: true, threshold: 0.2 });
   const [ref3, inView3] = useInView({ triggerOnce: true, threshold: 0.2 });
   const [ref4, inView4] = useInView({ triggerOnce: true, threshold: 0.2 });
 
-  // Trigger animations when steps come into view
   useEffect(() => {
     if (inView1) controls1.start({ opacity: 1, scale: 1 });
     if (inView2) controls2.start({ opacity: 1, scale: 1 });
@@ -27,7 +24,7 @@ export default function HowItWorksSection() {
     <section className="py-20 px-6 bg-gray-50 text-center">
       <h2 className="text-3xl font-bold mb-8">How It Works</h2>
       <div className="max-w-4xl mx-auto">
-        {/* Step 1 */}
+
         <motion.div
           ref={ref1}
           initial={{ opacity: 0, scale: 0.9 }}
@@ -50,7 +47,6 @@ export default function HowItWorksSection() {
           </div>
         </motion.div>
 
-        {/* Step 2 */}
         <motion.div
           ref={ref2}
           initial={{ opacity: 0, scale: 0.9 }}
@@ -73,7 +69,6 @@ export default function HowItWorksSection() {
           </div>
         </motion.div>
 
-        {/* Step 3 */}
         <motion.div
           ref={ref3}
           initial={{ opacity: 0, scale: 0.9 }}
@@ -96,7 +91,6 @@ export default function HowItWorksSection() {
           </div>
         </motion.div>
 
-        {/* Step 4 */}
         <motion.div
           ref={ref4}
           initial={{ opacity: 0, scale: 0.9 }}

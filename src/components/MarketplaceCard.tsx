@@ -1,6 +1,7 @@
 import Image from "next/image";
+import { MarketPlaceCardI } from "../../shared.interface";
 
-export default function MarketplaceCard({ image, title, description }: { image: string; title: string; description: string }) {
+export default function MarketplaceCard({ image, title, description }: MarketPlaceCardI) {
   return (
     <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow overflow-hidden">
       <div className="overflow-hidden rounded-t-lg">
